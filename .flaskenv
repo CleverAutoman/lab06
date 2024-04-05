@@ -1,0 +1,2 @@
+FLASK_ENV = app
+FLASK_DEBUG = True
