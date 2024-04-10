@@ -9,6 +9,13 @@ class TaskSchema(PlainTaskSchema):
     title = fields.Str()
     is_completed = fields.Bool()
 
+class ReturnTaskSchema(PlainTaskSchema):
+    id = fields.Int()
+    title = fields.Str()
+
+class ReturnBunchSchema(Schema):
+    tasks = fields.List(fields.Nested(ReturnTaskSchema))
+
 class AddTaskSchema(Schema):
     title = fields.Str(required=True)
     is_completed = fields.Bool(required=True)
